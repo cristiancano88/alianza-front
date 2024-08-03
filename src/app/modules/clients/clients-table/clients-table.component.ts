@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject } from 'rxjs';
-import { Client } from 'src/app/shared/models/client.model';
 import { CreateClientComponent } from '../create-client/create-client.component';
+import { Client } from './../../../shared/models/client.model';
 import { ClientsService } from './../../../shared/services/clients.service';
 
 @Component({
@@ -11,8 +10,6 @@ import { ClientsService } from './../../../shared/services/clients.service';
   styleUrls: ['./clients-table.component.scss'],
 })
 export class ClientsTableComponent implements OnInit {
-  private _takeUntil$ = new Subject<boolean>();
-
   clients: Client[] = [];
 
   constructor(
@@ -41,9 +38,7 @@ export class ClientsTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
       this._getClients();
-      // this.animal = result;
     });
   }
 }

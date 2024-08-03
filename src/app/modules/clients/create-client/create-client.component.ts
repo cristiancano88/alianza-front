@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ClientsService } from 'src/app/shared/services/clients.service';
-import { ProductValidator } from 'src/app/shared/validators/validator';
+import { ClientsService } from './../../../shared/services/clients.service';
+import { ProductValidator } from './../../../shared/validators/validator';
 
 @Component({
   selector: 'app-create-client',

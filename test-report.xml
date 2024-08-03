@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="C:\Users\ChristianCano\OneDrive - FOURIER ANALYTICS SAS\Documentos\Christian\alianza-project\alianza-front\src\app\modules\clients\search-client\search-client.component.spec.ts">
-    <testCase name="SearchClientComponent should create" duration="0"/>
-    <testCase name="SearchClientComponent should emit found clients when searchClientBySharedKey is called" duration="0"/>
-    <testCase name="SearchClientComponent should not emit when no clients are found" duration="0"/>
-    <testCase name="SearchClientComponent should handle empty search term" duration="115"/>
+  <file path="C:\Users\ChristianCano\OneDrive - FOURIER ANALYTICS SAS\Documentos\Christian\alianza-project\alianza-front\src\app\modules\clients\clients-table\clients-table.component.spec.ts">
+    <testCase name="ClientsTableComponent should create" duration="190"/>
+    <testCase name="ClientsTableComponent should call _getClients on ngOnInit" duration="57"/>
+    <testCase name="ClientsTableComponent should fetch clients on _getClients" duration="37"/>
+    <testCase name="ClientsTableComponent should update clients when foundClients is called" duration="29"/>
+    <testCase name="ClientsTableComponent should open dialog when openDialog is called" duration="107"/>
   </file>
 </testExecutions>
