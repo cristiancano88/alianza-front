@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Client } from 'src/app/shared/models/client.model';
-import { ClientsService } from 'src/app/shared/services/clients.service';
+import { ClientsService } from './../../../shared/services/clients.service';
 
 @Component({
   selector: 'app-search-client',

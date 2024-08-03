@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\ChristianCano\OneDrive - FOURIER ANALYTICS SAS\Documentos\Christian\alianza-project\alianza-front\src\app\modules\clients\search-client\search-client.component.spec.ts">
+    <testCase name="SearchClientComponent should create" duration="0"/>
+    <testCase name="SearchClientComponent should emit found clients when searchClientBySharedKey is called" duration="0"/>
+    <testCase name="SearchClientComponent should not emit when no clients are found" duration="0"/>
+    <testCase name="SearchClientComponent should handle empty search term" duration="115"/>
+  </file>
+</testExecutions>
