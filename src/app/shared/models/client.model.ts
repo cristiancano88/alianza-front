@@ -1,6 +1,6 @@
 export interface Client {
   sharedKey: string;
-  business: string;
+  name: string;
   email: string;
   phone: string;
   dataAdded: string;

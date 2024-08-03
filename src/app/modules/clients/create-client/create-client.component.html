@@ -1,0 +1,149 @@
+<h1 mat-dialog-title>Create New Client</h1>
+<div mat-dialog-content>
+  <form [formGroup]="clientForm">
+    <div class="mb-3 row">
+      <label for="inputName" class="col-sm-3 col-form-label">Name</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="inputName"
+          formControlName="name"
+          minlength="5"
+          maxlength="80"
+          required
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+          [ngClass]="'error'"
+        >
+          <small *ngIf="name?.errors?.['required']">
+            Este campo es requerido!
+          </small>
+          <small
+            *ngIf="name?.errors?.['minlength'] || name?.errors?.['maxlength']"
+          >
+            Tamaño del campo invalido!
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPhone" class="col-sm-3 col-form-label">Phone</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="inputPhone"
+          formControlName="phone"
+          minlength="5"
+          maxlength="80"
+          required
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)"
+          [ngClass]="'error'"
+        >
+          <small *ngIf="phone?.errors?.['required']">
+            Este campo es requerido!
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputEmail" class="col-sm-3 col-form-label">E-mail</label>
+      <div class="col-sm-9">
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          formControlName="email"
+          required
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+          [ngClass]="'error'"
+        >
+          <small *ngIf="email?.errors?.['required']">
+            Este campo es requerido!
+          </small>
+          <small *ngIf="email?.errors?.['email']"> E-mail incorrecto! </small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputStartDate" class="col-sm-3 col-form-label"
+        >Start date</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="date"
+          class="form-control"
+          id="inputStartDate"
+          formControlName="startDate"
+          [min]="currentDate.toISOString().slice(0, 10)"
+          required
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="startDate?.invalid && (startDate?.dirty || startDate?.touched)"
+          [ngClass]="'error'"
+        >
+          <small *ngIf="startDate?.errors?.['required']">
+            Este campo es requerido!
+          </small>
+          <small *ngIf="endDate?.errors?.['min']">
+            Fecha inicio incorrecta!
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputEndDate" class="col-sm-3 col-form-label">End date</label>
+      <div class="col-sm-9">
+        <input
+          type="date"
+          class="form-control"
+          id="inputEndDate"
+          formControlName="endDate"
+          [min]="startDate?.value"
+          required
+        />
+
+        <div
+          class="text-danger"
+          *ngIf="endDate?.invalid && (endDate?.dirty || endDate?.touched)"
+          [ngClass]="'error'"
+        >
+          <small *ngIf="endDate?.errors?.['required']">
+            Este campo es requerido!
+          </small>
+          <small *ngIf="endDate?.errors?.['min']">
+            Fecha fin incorrecta!
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <small class="text-danger fw-bold">{{ erroMessage }}</small>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="end" class="px-4">
+  <button
+    type="button"
+    class="btn btn-primary px-5"
+    (click)="onCreateUser()"
+    [disabled]="clientForm.invalid"
+  >
+    Ok
+  </button>
+</div>
