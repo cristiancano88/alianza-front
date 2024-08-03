@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CsvService } from 'src/app/shared/services/csv.service';
 import { CreateClientComponent } from '../create-client/create-client.component';
 import { Client } from './../../../shared/models/client.model';
 import { ClientsService } from './../../../shared/services/clients.service';
@@ -16,7 +17,8 @@ export class ClientsTableComponent implements OnInit {
 
   constructor(
     private _clientsService: ClientsService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private csvService: CsvService
   ) {}
 
   ngOnInit(): void {
@@ -46,5 +48,11 @@ export class ClientsTableComponent implements OnInit {
 
   toggleAdvanceSearch(): void {
     this.showAdvanceSearch = !this.showAdvanceSearch;
+  }
+
+  exportToCSV() {
+    const headers = ['sharedKey', 'name', 'email', 'phone', 'dataAdded'];
+    const csvData = this.csvService.convertToCSV(this.clients, headers);
+    this.csvService.downloadCSV(csvData, 'clients.csv');
   }
 }
