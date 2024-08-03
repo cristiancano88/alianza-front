@@ -12,6 +12,8 @@ import { ClientsService } from './../../../shared/services/clients.service';
 export class ClientsTableComponent implements OnInit {
   clients: Client[] = [];
 
+  showAdvanceSearch: boolean = false;
+
   constructor(
     private _clientsService: ClientsService,
     private dialog: MatDialog
@@ -40,5 +42,9 @@ export class ClientsTableComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       this._getClients();
     });
+  }
+
+  toggleAdvanceSearch(): void {
+    this.showAdvanceSearch = !this.showAdvanceSearch;
   }
 }

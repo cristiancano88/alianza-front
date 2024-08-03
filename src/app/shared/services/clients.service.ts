@@ -26,4 +26,27 @@ export class ClientsService {
       params,
     });
   }
+
+  advanceSearch(
+    name: string,
+    phone: string,
+    email: string
+  ): Observable<Client[]> {
+    let params = new HttpParams();
+    if (name) {
+      params = params.append('name', name);
+    }
+    if (phone) {
+      params = params.append('phone', phone);
+    }
+    if (email) {
+      params = params.append('email', email);
+    }
+    return this._http.get<Client[]>(
+      `${this.clientsUrl}/clients/search-by-filters`,
+      {
+        params,
+      }
+    );
+  }
 }

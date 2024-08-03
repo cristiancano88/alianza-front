@@ -32,14 +32,23 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row mb-3">
   <div class="col-3">
     <app-search-client
       (foundClients)="foundClients($event)"
     ></app-search-client>
   </div>
-  <div class="col">
-    <button class="btn btn-primary" disabled>Advance Search</button>
+
+  <div class="col-9">
+    <button class="btn btn-primary" (click)="toggleAdvanceSearch()">
+      Advance Search
+    </button>
+  </div>
+
+  <div class="col-4" *ngIf="showAdvanceSearch">
+    <app-advance-search-client
+      (foundClients)="foundClients($event)"
+    ></app-advance-search-client>
   </div>
 </div>
 

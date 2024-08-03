@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { of } from 'rxjs';
@@ -22,6 +23,7 @@ describe('ClientsTableComponent', () => {
         FormsModule,
         MatIconModule,
         MatDialogModule,
+        MatCardModule,
       ],
       providers: [
         {

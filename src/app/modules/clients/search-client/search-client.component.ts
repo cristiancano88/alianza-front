@@ -18,7 +18,7 @@ export class SearchClientComponent {
   searchClientBySharedKey(): void {
     this._clientsService
       .searchClientBySharedKey(this.searchTerm)
-      .subscribe((clients) => {
+      .subscribe((clients: Client[]) => {
         this.foundClients.emit(clients);
       });
   }
