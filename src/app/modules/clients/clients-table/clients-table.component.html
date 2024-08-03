@@ -1,0 +1,33 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">Clients</h1>
+
+  <div>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Shared Key</th>
+        <th>Business ID</th>
+        <th>E-mail</th>
+        <th>Phone</th>
+        <th>Data Added</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.sharedKey }}</td>
+        <td>{{ client.business }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.phone }}</td>
+        <td>{{ client.dataAdded }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

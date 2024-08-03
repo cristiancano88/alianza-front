@@ -1,0 +1,40 @@
+@media screen and (min-width: 992px) {
+    .navbar .container-fluid,
+    .navbar-expand-lg .navbar-collapse,
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar {
+        width: 15%;
+        height: 100vh;
+        align-items: flex-start;
+    }
+    .navbar-brand {
+        margin-left: 0.5rem;
+    }
+}
+
+.navbar {
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1em;
+
+    &.active {
+        color: #007bff;
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 50%;
+
+    img {
+        width: 130px;
+    }
+}
