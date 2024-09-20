@@ -29,6 +29,17 @@
       ></mat-icon
       >Export
     </button>
+    <button (click)="initiatePayment()" class="btn btn-primary ms-2">
+      Pagar con PayU
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary ms-2"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>
   </div>
 </div>
 
@@ -81,4 +92,437 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade modal-lg"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body px-5">
+        <div>
+          <p class="text-center text-xl fs-5 mb-4">
+            Always Free. Get more powers with Personal Pro Plan.
+          </p>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div
+                class="card text-center shadow rounded border border-light h-100"
+              >
+                <div class="card-body p-5">
+                  <div class="mb-3">
+                    <img
+                      data-v-94478dc8=""
+                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjUiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NSA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUyLjgyNDggMzUuMDg1OUM1Mi4zMjI1IDM1LjA4NTkgNTEuOTE1MyAzNS40OTMyIDUxLjkxNTMgMzUuOTk1NUM1MS45MTUzIDM2LjYzMjMgNTEuMzk3MiAzNy4xNTA0IDUwLjc2MDQgMzcuMTUwNEM1MC4xMjM3IDM3LjE1MDQgNDkuNjA1NSAzNi42MzIzIDQ5LjYwNTUgMzUuOTk1NUM0OS42MDU1IDM1LjQ5MyA0OS4xOTgyIDM1LjA4NTkgNDguNjk1OSAzNS4wODU5QzQ4LjE5MzYgMzUuMDg1OSA0Ny43ODY0IDM1LjQ5MzIgNDcuNzg2NCAzNS45OTU1QzQ3Ljc4NjQgMzcuNjM1NCA0OS4xMjA2IDM4Ljk2OTUgNTAuNzYwNCAzOC45Njk1QzUyLjQwMDEgMzguOTY5NSA1My43MzQ0IDM3LjYzNTMgNTMuNzM0NCAzNS45OTU1QzUzLjczNDQgMzUuNDkyOSA1My4zMjcxIDM1LjA4NTkgNTIuODI0OCAzNS4wODU5WiIgZmlsbD0iIzE3MUMyNiIvPgo8Y2lyY2xlIGN4PSIzMC41NDY5IiBjeT0iMTIuMTgxOCIgcj0iMTIuMTA5NCIgZmlsbD0iI0JCQzFDQyIvPgo8cGF0aCBkPSJNNjEuMzYyOCAzNS4yMzQ1TDU4LjgwMjcgMzQuNDE0NEM1OC40NzQ5IDM0LjMwOTMgNTguMjE2NCAzNC4wNDc2IDU4LjExMTYgMzMuNzE0MkM1Ny41NzIgMzEuOTk4OCA1Ni43NTc4IDMwLjM4ODMgNTUuNjkxNSAyOC45Mjc0QzU1LjIwNTYgMjguMjYxNSA1NC42NjUyIDI3LjYyNTYgNTQuMDc0OCAyNy4wMjAzQzU0LjQ1MjUgMjUuMzYzNCA1NC42NTc4IDIzLjQ4ODMgNTQuNjMxMiAyMS44NjgzQzU0LjU5MzEgMTkuNTUwOCA1NC4xMyAxOC4xOTE1IDUzLjIxNTUgMTcuNzEyNUM1Mi43MjI5IDE3LjQ1NDIgNTEuMjIzOSAxNi42Njk2IDQzLjExMDIgMjAuMzgzN0M0Mi45MTgxIDIwLjQ3MTYgNDIuNzM4NiAyMC41Nzk4IDQyLjU3MjUgMjAuNzAzOUM0Mi4wMjU1IDIwLjU1NjkgNDEuNDY2NCAyMC40MjA5IDQwLjkwMzkgMjAuMjk4OEM0MC44MzYyIDIwLjI4NDEgNDAuNzY2NCAyMC4yNzEgNDAuNjk4MSAyMC4yNTY2QzQxLjM1NTYgMTguODIwMyA0MS43Mzk1IDE3LjI2MDQgNDEuODExNiAxNS42NUM0MS44MzQxIDE1LjE0ODEgNDEuNDQ1NiAxNC43MjMgNDAuOTQzNiAxNC43MDA3QzQwLjQ0MyAxNC42NzU4IDQwLjAxNjYgMTUuMDY2NiAzOS45OTQzIDE1LjU2ODZDMzkuODc1NyAxOC4yMTY0IDM4Ljc3NzMgMjAuNzA3OCAzNi45MDE2IDIyLjU4MzZDMzUuNzgwOSAyMy43MDQzIDM0LjQ2ODYgMjQuNTE4NCAzMy4wNzAxIDI1LjAzMTFDMzAuNjQ0NyAyNC42OTA4IDI4LjE3NDIgMjQuNjkwOCAyNS43NDg4IDI1LjAzMTFDMjQuMzUwMSAyNC41MTg0IDIzLjAzOCAyMy43MDQzIDIxLjkxNzIgMjIuNTgzNkMxOS45MTYgMjAuNTgyNCAxOC44MTM4IDE3LjkyMTYgMTguODEzOCAxNS4wOTE0QzE4LjgxMzggMTIuMjYxMSAxOS45MTYgOS42MDA0NiAyMS45MTcyIDcuNTk5MjRDMjMuOTE4NSA1LjU5NzkgMjYuNTc5MyA0LjQ5NTczIDI5LjQwOTQgNC40OTU3M0MzMi4yMzk1IDQuNDk1NzMgMzQuOTAwNCA1LjU5NzkgMzYuOTAxNiA3LjU5OTI0QzM3LjcwNTggOC40MDM0NCAzOC4zNzA0IDkuMzIxMTcgMzguODc2OCAxMC4zMjY3QzM5LjEwMjggMTAuNzc1NCAzOS42NDk4IDEwLjk1NjEgNDAuMDk4NCAxMC43M0M0MC41NDcxIDEwLjUwNDEgNDAuNzI3NyA5Ljk1NzE1IDQwLjUwMTcgOS41MDg1NEMzOS45MDgxIDguMzI5NDcgMzkuMTI5NiA3LjI1NDM5IDM4LjE4ODEgNi4zMTI3NEMzNS44NDMzIDMuOTY3OSAzMi43MjU2IDIuNjc2NTEgMjkuNDA5NSAyLjY3NjUxQzI2LjA5MzUgMi42NzY1MSAyMi45NzU4IDMuOTY3OSAyMC42MzEgNi4zMTI3NEMxOC4yODYxIDguNjU3NzEgMTYuOTk0OCAxMS43NzUzIDE2Ljk5NDggMTUuMDkxM0MxNi45OTQ4IDE4LjQwNzMgMTguMjg2MSAyMS41MjUgMjAuNjMxIDIzLjg2OTlDMjEuMzA3NCAyNC41NDYzIDIyLjA0MzIgMjUuMTI3OSAyMi44MjE1IDI1LjYxNTJDMjIuODIxOCAyNS42MTUyIDIyLjgyMiAyNS42MTUxIDIyLjgyMjMgMjUuNjE1MUMyMi4yNTY3IDI1Ljc2MjEgMjEuNjk1NCAyNS45MjcxIDIxLjE0MDQgMjYuMTEyN0MyMC42NjM5IDI2LjI3MiAyMC40MDY5IDI2Ljc4NzIgMjAuNTY2MiAyNy4yNjM4QzIwLjcyNTMgMjcuNzQwMiAyMS4yNDA4IDI3Ljk5NzMgMjEuNzE3MiAyNy44MzgxQzI2LjY3NzYgMjYuMTc5OCAzMi4xNDE1IDI2LjE3OTggMzcuMTAxOSAyNy44MzgxQzM3LjE5NzYgMjcuODcwMSAzNy4yOTQ4IDI3Ljg4NTMgMzcuMzkwNCAyNy44ODUzQzM3Ljc3MDkgMjcuODg1MyAzOC4xMjU2IDI3LjY0NDUgMzguMjUyOSAyNy4yNjM4QzM4LjQxMjIgMjYuNzg3MyAzOC4xNTUyIDI2LjI3MiAzNy42Nzg3IDI2LjExMjdDMzcuMTIzNyAyNS45MjcxIDM2LjU2MjQgMjUuNzYyIDM1Ljk5NjggMjUuNjE1MUMzNS45OTcxIDI1LjYxNTEgMzUuOTk3MyAyNS42MTUyIDM1Ljk5NzYgMjUuNjE1MkMzNi43NzYgMjUuMTI3OSAzNy41MTE3IDI0LjU0NjMgMzguMTg4MSAyMy44Njk5QzM4Ljc4NjUgMjMuMjcxNSAzOS4zMTQ3IDIyLjYxOCAzOS43NzMzIDIxLjkyMzZDNDAuMDI0IDIxLjk3MjMgNDAuMjcyOSAyMi4wMjMzIDQwLjUxODIgMjIuMDc2NUM0MC44NDQ4IDIyLjE0NzUgNDEuMTcgMjIuMjIzNiA0MS40OTIzIDIyLjMwMzZDNDEuNDgyMiAyMi4zNDMxIDQxLjQ3MTggMjIuMzgyNiA0MS40NjM0IDIyLjQyMjdDNDEuMDE5OCAyNC41Mjc4IDQxLjA0ODYgMjYuMzg5NiA0MS41NDkgMjcuOTU2MkM0MS45OTg3IDI5LjM2NDMgNDIuODEwMyAzMC41MDUgNDMuOTYxMSAzMS4zNDY5QzQ1LjMxNzQgMzIuMzM5MSA0Ni45NTQ4IDMyLjc2NzcgNDguNDM4MSAzMi43Njc3QzQ5LjU1NDQgMzIuNzY3NyA1MC41ODM2IDMyLjUyNDggNTEuMzM5NSAzMi4wOTY3QzUyLjE5NDUgMzEuNjEyNCA1Mi45MTA4IDMwLjU5MiA1My40Nzc4IDI5LjA2MDFDNTMuNzM5OSAyOS4zNjYgNTMuOTg4MyAyOS42NzkzIDU0LjIyMjQgMzAuMDAwMUM1NS4xNzE4IDMxLjMwMDcgNTUuODk2NSAzMi43MzQgNTYuMzc2NSAzNC4yNjAxQzU2LjY1ODMgMzUuMTU2NSA1Ny4zNTggMzUuODYxOCA1OC4yNDggMzYuMTQ3MUw2MC44MDgxIDM2Ljk2NzJDNjEuNDc5OSAzNy4xODI0IDYxLjkzMTIgMzcuODAwNyA2MS45MzEyIDM4LjUwNlY0Mi43NTFDNjEuOTMxMiA0My40NTYzIDYxLjQ3OTkgNDQuMDc0NiA2MC44MDgxIDQ0LjI4OThMNTYuNjgzNSA0NS42MTFDNTYuMDIzNiA0NS44MjI1IDU1LjQ2NTEgNDYuMjc2IDU1LjExMSA0Ni44ODgxQzUzLjQ5MDUgNDkuNjg4NiA1MC45NDI3IDUyLjAwNjEgNDcuNTM4MSA1My43NzYyQzQ3LjE0NDggNTMuOTgxIDQ2Ljg3MjMgNTQuMzQ3IDQ2Ljc5MDMgNTQuNzgwOUw0NS40NjkyIDYxLjc3NTlDNDUuNDMyNyA2MS45Njg2IDQ1LjI2MzkgNjIuMTA4NCA0NS4wNjc3IDYyLjEwODRINDAuNzcyNUM0MC41NzYzIDYyLjEwODQgNDAuNDA3NSA2MS45Njg1IDQwLjM3MSA2MS43NzU5TDM5LjYzOTMgNTcuOTFDMzkuNDk1MiA1Ny4xNDk0IDM4Ljc4MTkgNTYuNjQ0MiAzOC4wMTQgNTYuNzYwNUMzNi4xNjM4IDU3LjA0MDMgMzQuMjU3MyA1Ny4xODIgMzIuMzQ3OCA1Ny4xODJDMzAuOTI3MSA1Ny4xODIgMjkuNTI0NyA1Ny4xMDI4IDI4LjE3OTEgNTYuOTQ2NEMyNy40MzUxIDU2Ljg2MDggMjYuNzQxOSA1Ny4zNjggMjYuNjAyOSA1OC4xMDI3TDI1LjkwNzYgNjEuNzc1OUMyNS44NzExIDYxLjk2ODYgMjUuNzAyMyA2Mi4xMDg0IDI1LjUwNjEgNjIuMTA4NEgyMS4yMTA4QzIxLjAxNDYgNjIuMTA4NCAyMC44NDU4IDYxLjk2ODUgMjAuODA4OCA2MS43NzI5TDE5LjUzNjkgNTUuMTY2M0MxOS40NTUgNTQuNzQwNiAxOS4xODc2IDU0LjM3ODcgMTguODAzIDU0LjE3MzJDMTIuOTk5MyA1MS4wNzQ5IDkuOTMxNjQgNDUuODk4NyA5LjkzMTY0IDM5LjIwNDNDOS45MzE2NCAzNS44MjIgMTAuNjcxNiAzMi44MzEyIDEyLjEzMSAzMC4zMTQ2QzEzLjQ5MjggMjcuOTY2MSAxNS40ODE4IDI2LjAyNDMgMTguMDQyNyAyNC41NDNDMTguNDc3NSAyNC4yOTE0IDE4LjYyNjEgMjMuNzM1IDE4LjM3NDYgMjMuM0MxOC4xMjMyIDIyLjg2NTIgMTcuNTY2OCAyMi43MTY5IDE3LjEzMTggMjIuOTY4MUMxMi4xNjYxIDI1Ljg0MDcgOS4xNzExNCAzMC4yNzIzIDguMzQ2NTYgMzUuOTAxVjM1LjkwMDlDOC4yNTkwMyAzNS44OTI5IDguMTcxMzkgMzUuODg1NCA4LjA4NDExIDM1Ljg3NjNDOC4wOTk5OCAzNS4yNjkgNy45OTAxMSAzNC42NTYyIDcuNzUwODUgMzQuMDYxNUM3LjIyMzE0IDMyLjc0OTggNi4xMzkxNiAzMS44MDMgNC45ODkxNCAzMS42NDk1QzQuMDgyODkgMzEuNTI4MiAzLjIyMDQ2IDMxLjkxMyAyLjYyMTk1IDMyLjcwMzdDMS43NTQxNSAzMy44NTA1IDEuODk1NjMgMzQuNzU3OSAyLjE2Njk5IDM1LjMxNzNDMi42MjUxMiAzNi4yNjEyIDMuODAyNzMgMzYuOTI5IDUuNzU2OTYgMzcuMzQ4OEM1LjcwMzI1IDM3LjQyOTIgNS42NDQxNyAzNy41MSA1LjU3OTQ3IDM3LjU5MTJDNC40MjQ4IDM5LjAzOTMgMy4wNjQ0NSAzOS4zNTk1IDIuMTgxMTUgMzkuMzg5NkMxLjY2NDA2IDM5LjQwNzEgMS4yNSAzOS44MjIzIDEuMjUgNDAuMzM5N1Y0MC4zNDQxQzEuMjUgNDAuODU0NSAxLjY1MjcxIDQxLjI3MDcgMi4xNjI2IDQxLjI5NDFDMi4yMjc5MSA0MS4yOTcxIDIuMjk2MTQgNDEuMjk4NyAyLjM2NzE5IDQxLjI5ODdDMy40ODQ4NiA0MS4yOTg3IDUuMjc4NjkgNDAuODg2NSA3LjAwMjA4IDM4LjcyNTVDNy4yNzQxNyAzOC4zODQ0IDcuNDk1ODUgMzguMDI0NSA3LjY2NjI2IDM3LjY1MjdDNy44Mzc4OSAzNy42NzIxIDguMDAyODEgMzcuNjg4NyA4LjE2MDc3IDM3LjcwMzRDOC4xNjA3NyAzNy43MDMgOC4xNjA3NyAzNy43MDI4IDguMTYwODkgMzcuNzAyNEM4LjEyOTg4IDM4LjE5NTMgOC4xMTI2NyAzOC42OTU0IDguMTEyNjcgMzkuMjA0M0M4LjExMjY3IDQyLjk5MTkgOS4wMTU2MyA0Ni4zNjkgMTAuNzk2MyA0OS4yNDIyQzEyLjQzODEgNTEuODkxMSAxNC43ODg4IDU0LjA2MDEgMTcuNzg1NCA1NS42OTEyTDE5LjAyMiA2Mi4xMTRDMTkuMjIwOCA2My4xNjQ4IDIwLjE0MTQgNjMuOTI3NSAyMS4yMTA4IDYzLjkyNzVIMjUuNTA2MUMyNi41NzU2IDYzLjkyNzUgMjcuNDk2MSA2My4xNjQ4IDI3LjY5NDkgNjIuMTE0TDI4LjMyMzYgNTguNzkyN0MyOS42MjkzIDU4LjkzMSAzMC45ODExIDU5LjAwMTEgMzIuMzQ3NyA1OS4wMDExQzM0LjIyMjcgNTkuMDAxMSAzNi4wOTU1IDU4Ljg3MDUgMzcuOTIwNyA1OC42MTI3TDM4LjU4MzQgNjIuMTE0M0MzOC43ODIzIDYzLjE2NSAzOS43MDI5IDYzLjkyNzYgNDAuNzcyMiA2My45Mjc2SDQ1LjA2NzVDNDYuMTM3IDYzLjkyNzYgNDcuMDU3NSA2My4xNjQ5IDQ3LjI1NjUgNjIuMTEzOEw0OC41NDI3IDU1LjMwMzNDNTIuMTc2NSA1My4zODE4IDU0LjkxNTUgNTAuODU3NyA1Ni42ODUzIDQ3Ljc5OTFDNTYuODEyOSA0Ny41Nzg2IDU3LjAwOTMgNDcuNDE2OSA1Ny4yMzgzIDQ3LjM0MzVMNjEuMzYyOCA0Ni4wMjIzQzYyLjc5MDYgNDUuNTY0NyA2My43NSA0NC4yNTAxIDYzLjc1IDQyLjc1MDdWMzguNTA1N0M2My43NSAzNy4wMDY1IDYyLjc5MDYgMzUuNjkxOSA2MS4zNjI4IDM1LjIzNDVaTTUyLjY3NTUgMjQuNDI0M0M1Mi4zMjU0IDI3LjQxODIgNTEuMzg2NCAyOS45NzkyIDUwLjQ0MjcgMzAuNTEzN0M0OS4zNzAyIDMxLjEyMTIgNDYuODk0IDMxLjIzODUgNDUuMDM0OSAyOS44Nzg1QzQzLjE3MzYgMjguNTE3IDQyLjU1NDEgMjYuMDY4NSA0My4yNDMyIDIyLjc5NzdDNDMuMjQzMiAyMi43OTc2IDQzLjI0MzIgMjIuNzk3NiA0My4yNDMyIDIyLjc5NzZDNDMuMzEyNCAyMi40NjkxIDQzLjU0NTggMjIuMTg0OSA0My44Njc0IDIyLjAzNzdDNDguNDIxMSAxOS45NTMyIDUxLjA0NjUgMTkuMjcxNSA1Mi4wMjE5IDE5LjI3MTVDNTIuMTY5MSAxOS4yNzE1IDUyLjI3ODcgMTkuMjg3IDUyLjM1MTcgMTkuMzE1NUM1Mi42NDQ3IDE5LjYyNzggNTMuMDI4OSAyMS40MDI4IDUyLjY3NTUgMjQuNDI0M1pNMy44MDM4MyAzNC41MjI5QzMuNzA5NzIgMzQuMzI4OSAzLjkzMTg4IDMzLjk4NzcgNC4wNzI3NSAzMy44MDE0QzQuMjk2MDIgMzMuNTA2NSA0LjUwMTcxIDMzLjQ0NjIgNC42NTcxIDMzLjQ0NjJDNC42ODk5NCAzMy40NDYyIDQuNzIwNTggMzMuNDQ4OCA0Ljc0ODY2IDMzLjQ1MjZDNS4xNjY4NyAzMy41MDg0IDUuNzUyODEgMzMuOTY4NiA2LjA2MzIzIDM0Ljc0MDJDNi4xMzYzNSAzNC45MjE5IDYuMjMxMzIgMzUuMjIyOCA2LjI1MzU0IDM1LjU5OEM0Ljk5NDM4IDM1LjMzNzIgNC4wMTYxMSAzNC45NjExIDMuODAzODMgMzQuNTIyOVoiIGZpbGw9IiMxNzFDMjYiLz4KPHBhdGggZD0iTTMwLjEyNSAxNC4xNDA1VjExLjQ4MTNDMzEuMDM4NCAxMS41NDY5IDMxLjM3NzggMTEuOTY2IDMxLjY5MDkgMTEuOTY2QzMyLjA4MjUgMTEuOTY2IDMyLjI2NTEgMTEuNDY4MyAzMi4yNjUxIDExLjIxOTNDMzIuMjY1MSAxMC41Nzc0IDMxLjAxMjMgMTAuMzAyMyAzMC4xMjUgMTAuMjc2MVY5LjkyMjI2QzMwLjEyNSA5Ljc2NTA4IDI5LjkyOTEgOS42MjA5NyAyOS43MzM0IDkuNjIwOTdDMjkuNTExNSA5LjYyMDk3IDI5LjM1NDkgOS43NjUwOCAyOS4zNTQ5IDkuOTIyMjZWMTAuMzAyMUMyOC4xMTUyIDEwLjQzMzIgMjYuODc1NSAxMS4wODgyIDI2Ljg3NTUgMTIuNzM4OEMyNi44NzU1IDE0LjQxNTcgMjguMTgwNSAxNC44ODczIDI5LjM1NDkgMTUuMzA2NVYxOC4zODVDMjguMDIzOCAxOC4yODAyIDI3LjY3MTUgMTcuMzYzMiAyNy4yNDA5IDE3LjM2MzJDMjYuOTE0NiAxNy4zNjMyIDI2LjY0MDYgMTcuNzk1NSAyNi42NDA2IDE4LjExQzI2LjY0MDYgMTguNzUxOCAyNy43MzY4IDE5LjYyOTUgMjkuMzU0OSAxOS42NTU4VjIwLjA2MTlDMjkuMzU0OSAyMC4yMTkgMjkuNTExNiAyMC4zNjMyIDI5LjczMzQgMjAuMzYzMkMyOS45MjkyIDIwLjM2MzIgMzAuMTI1IDIwLjIxOSAzMC4xMjUgMjAuMDYxOVYxOS42MTY1QzMxLjUzNDQgMTkuNDE5OSAzMi41IDE4LjUyOTEgMzIuNSAxNi45MTc4QzMyLjUgMTUuMTM2MiAzMS4yNjAzIDE0LjU1OTcgMzAuMTI1IDE0LjE0MDVaTTI5LjQzMzIgMTMuODkxN0MyOC43NDE2IDEzLjYyOTcgMjguMTgwNSAxMy4zNTQ3IDI4LjE4MDUgMTIuNjA4QzI4LjE4MDUgMTEuOTI2NyAyOC43MDI0IDExLjU5OTIgMjkuNDMzMiAxMS41MDc2VjEzLjg5MTdaTTMwLjA0NjYgMTguMzU4OFYxNS41OTQ3QzMwLjY4NiAxNS44Njk3IDMxLjE5NDkgMTYuMjM2NSAzMS4xOTQ5IDE3LjA2MThDMzEuMTk0OSAxNy44MDg3IDMwLjc1MTIgMTguMjI3OCAzMC4wNDY2IDE4LjM1ODhaIiBmaWxsPSIjMTcxQzI2Ii8+Cjwvc3ZnPgo="
+                      class="plan-icon"
+                    />
+                  </div>
+                  <p class="h5 my-3">Personal</p>
+                  <p class="card-text">
+                    For anyone getting started in designing database diagrams
+                  </p>
+                  <div class="horizontal-divider"></div>
+                  <p class="fs-1 fw-bold mt-4">Free</p>
+                  <h5>and it's forever</h5>
+                  <div class="text-start mt-4">
+                    <ul class="mt-2 ps-2">
+                      <li class="mb-2 me-4">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          quis exercitation ullamco
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          cillum dolore eu fugiat
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> ullamco laboris nisi </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> Export to PDF/PNG </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-5">
+                  <p class="fw-bold">Plan actual</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div
+                class="card text-center shadow rounded border border-light h-100"
+              >
+                <div class="card-body p-5">
+                  <div class="mb-3">
+                    <img
+                      data-v-66d7b771=""
+                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjUiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NSA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYyLjc5NjggNTcuNDExM0g2MS4wNjZDNjAuNDQ2MyA1Ny40MTEzIDU5Ljk0MzYgNTcuOTA1NyA1OS45NDM2IDU4LjUxNjRDNTkuOTQzNiA1OS4xMjcgNjAuNDQ2MyA1OS42MjE1IDYxLjA2NiA1OS42MjE1SDYyLjc5NjhDNjMuNDE2NCA1OS42MjE1IDYzLjkxOTIgNTkuMTI3IDYzLjkxOTIgNTguNTE2NEM2My45MTkyIDU3LjkwNTcgNjMuNDE2NCA1Ny40MTEzIDYyLjc5NjggNTcuNDExM1oiIGZpbGw9IiMxNzFDMjYiLz4KPHBhdGggZD0iTTM1LjgxODQgNDcuMDA3MlY0My45OTE4QzM1LjgxODQgNDEuODI4MiAzNC4wMzA4IDQwLjA2ODEgMzEuODMzNCA0MC4wNjgxQzI5LjYzNiA0MC4wNjgxIDI3Ljg0ODQgNDEuODI4MiAyNy44NDg0IDQzLjk5MThWNDcuMDA3MkMyNy44NDg0IDQ5LjE3MDIgMjkuNjM2IDUwLjkzMDMgMzEuODMzNCA1MC45MzAzQzM0LjAzMDggNTAuOTMwMyAzNS44MTg0IDQ5LjE3MDIgMzUuODE4NCA0Ny4wMDcyWk0zMC4wOTMxIDQ3LjAwNzJWNDMuOTkxOEMzMC4wOTMxIDQzLjA0NzMgMzAuODc0MSA0Mi4yNzgzIDMxLjgzMzQgNDIuMjc4M0MzMi43OTI2IDQyLjI3ODMgMzMuNTczNiA0My4wNDczIDMzLjU3MzYgNDMuOTkxOFY0Ny4wMDcyQzMzLjU3MzYgNDcuOTUxNyAzMi43OTI2IDQ4LjcyMDEgMzEuODMzNCA0OC43MjAxQzMwLjg3NDEgNDguNzIwMSAzMC4wOTMxIDQ3Ljk1MTcgMzAuMDkzMSA0Ny4wMDcyWiIgZmlsbD0iIzE3MUMyNiIvPgo8ZWxsaXBzZSBjeD0iNTguMDMwMiIgY3k9IjI5LjYyNzciIHJ4PSIzLjQzNTI3IiByeT0iMy4zODI0MiIgZmlsbD0iI0ZGQUYzNyIvPgo8ZWxsaXBzZSBjeD0iNS4zNTU5MiIgY3k9IjI5LjYyNzciIHJ4PSIzLjQzNTI3IiByeT0iMy4zODI0MiIgZmlsbD0iI0ZGQUYzNyIvPgo8cGF0aCBkPSJNMTQuMzk1MyAyNC45MjExQzE1LjAxNSAyNC45MjExIDE1LjUxNzcgMjQuNDI2NyAxNS41MTc3IDIzLjgxNlYyMi45MzE5SDE2LjQxNTZDMTcuMDM1MiAyMi45MzE5IDE3LjUzNzkgMjIuNDM3NSAxNy41Mzc5IDIxLjgyNjhDMTcuNTM3OSAyMS4yMTYxIDE3LjAzNTIgMjAuNzIxNyAxNi40MTU2IDIwLjcyMTdIMTUuNTE3N1YxOS44Mzc2QzE1LjUxNzcgMTkuMjI3IDE1LjAxNSAxOC43MzI1IDE0LjM5NTMgMTguNzMyNUMxMy43NzUxIDE4LjczMjUgMTMuMjcyOSAxOS4yMjcgMTMuMjcyOSAxOS44Mzc2VjIwLjcyMTdIMTIuMzc1MUMxMS43NTQ4IDIwLjcyMTcgMTEuMjUyNyAyMS4yMTYxIDExLjI1MjcgMjEuODI2OEMxMS4yNTI3IDIyLjQzNzUgMTEuNzU0OCAyMi45MzE5IDEyLjM3NTEgMjIuOTMxOUgxMy4yNzI5VjIzLjgxNkMxMy4yNzI5IDI0LjQyNjcgMTMuNzc1MSAyNC45MjExIDE0LjM5NTMgMjQuOTIxMVoiIGZpbGw9IiMxNzFDMjYiLz4KPGVsbGlwc2UgY3g9IjMyLjA3NDciIGN5PSIyMS4zNTk3IiByeD0iMy40MzUyNyIgcnk9IjMuMzgyNDIiIGZpbGw9IiNGRkFGMzciLz4KPHBhdGggZD0iTTQyLjk2NzggMTQuODM5NEw0NS44NzEzIDE2LjQwMzJMNDcuNDU5NiAxOS4yNjI3QzQ3LjY1NjYgMTkuNjE3MiA0OC4wMzQyIDE5LjgzNzcgNDguNDQ0NiAxOS44Mzc3QzQ4Ljg1NDkgMTkuODM3NyA0OS4yMzI2IDE5LjYxNzIgNDkuNDI5IDE5LjI2MjdMNTEuMDE3MiAxNi40MDMyTDUzLjkyMTQgMTQuODM5NEM1NC4yODE1IDE0LjY0NiA1NC41MDQ4IDE0LjI3NDIgNTQuNTA0OCAxMy44NzAxQzU0LjUwNDggMTMuNDY2MSA1NC4yODE1IDEzLjA5NDMgNTMuOTIxNCAxMi45MDA5TDUxLjAxNzIgMTEuMzM3TDQ5LjQyOSA4LjQ3NzU5QzQ5LjIzMjYgOC4xMjMwMyA0OC44NTQ5IDcuOTAyNTkgNDguNDQ0NiA3LjkwMjU5QzQ4LjAzNDIgNy45MDI1OSA0Ny42NTY2IDguMTIzMDMgNDcuNDU5NiA4LjQ3NzU5TDQ1Ljg3MTMgMTEuMzM3TDQyLjk2NzggMTIuOTAwOUM0Mi42MDc3IDEzLjA5NDMgNDIuMzgzOCAxMy40NjYxIDQyLjM4MzggMTMuODcwMUM0Mi4zODM4IDE0LjI3NDIgNDIuNjA3NyAxNC42NDYgNDIuOTY3OCAxNC44Mzk0VjE0LjgzOTRaTTQ3LjIzNjkgMTMuMTIwN0M0Ny40MjU3IDEzLjAxOTQgNDcuNTggMTIuODY2OSA0Ny42ODI5IDEyLjY4MTZMNDguNDQ0NiAxMS4zMTA2TDQ5LjIwNTcgMTIuNjgxNkM0OS4zMDg2IDEyLjg2NjkgNDkuNDYzNSAxMy4wMTk0IDQ5LjY1MTcgMTMuMTIwN0w1MS4wNDQxIDEzLjg3MDFMNDkuNjUyMyAxNC42MTk1QzQ5LjQ2MzUgMTQuNzIwOCA0OS4zMDkxIDE0Ljg3MzQgNDkuMjA2MyAxNS4wNTg3TDQ4LjQ0NDYgMTYuNDI5N0w0Ny42ODM1IDE1LjA1ODdDNDcuNTgwNiAxNC44NzM0IDQ3LjQyNTcgMTQuNzIwOCA0Ny4yMzc0IDE0LjYxOTVMNDUuODQ1IDEzLjg3MDFMNDcuMjM2OSAxMy4xMjA3WiIgZmlsbD0iIzE3MUMyNiIvPgo8cGF0aCBkPSJNNTcuNjUwNiA1OS42MjExQzU4LjI3MDIgNTkuNjIxMSA1OC43NzMgNTkuMTI2NyA1OC43NzMgNTguNTE2QzU4Ljc3MyA1Ny45MDUzIDU4LjI3MDIgNTcuNDEwOSA1Ny42NTA2IDU3LjQxMDlINTUuMzUxOUw1OS4wMDkgMzMuMTUxN0M2MS4wMjUxIDMyLjg5MTUgNjIuNTg2NSAzMS4xOTAxIDYyLjU4NjUgMjkuMTM1M0M2Mi41ODY1IDI2LjkwMSA2MC43NDA1IDI1LjA4MzMgNTguNDcxMiAyNS4wODMzQzU2LjIwMTkgMjUuMDgzMyA1NC4zNTU4IDI2LjkwMSA1NC4zNTU4IDI5LjEzNTNDNTQuMzU1OCAyOS43OTMyIDU0LjUxNjYgMzAuNDE0MyA1NC44MDA3IDMwLjk2MzlMNDkuMzQ3MyAzNi4xMTgyQzQ4LjQyNDggMzQuNzkzMiA0Ny4zNTA0IDMzLjU3NjUgNDYuMTM2MiAzMi40OTIxQzQ1LjY3NzQgMzIuMDgxNyA0NC45NjcxIDMyLjExNTcgNDQuNTUwOSAzMi41NjgxQzQ0LjEzNDEgMzMuMDE5OSA0NC4xNjg2IDMzLjcxOTIgNDQuNjI4MSAzNC4xMjlDNDUuODA0OCAzNS4xOCA0Ni44MzQ4IDM2LjM3MDMgNDcuNzAyOSAzNy42NzIyTDQzLjIxMzQgNDEuOTE1NEwzNy42MzY2IDMwLjE5MjdDMzguNzgwMSAzMC41NDIgMzkuODg3MiAzMC45OTkgNDAuOTQ2NSAzMS41NjI1QzQxLjExNiAzMS42NTIzIDQxLjI5OSAzMS42OTQ5IDQxLjQ3OSAzMS42OTQ5QzQxLjg3ODMgMzEuNjk0OSA0Mi4yNjQ3IDMxLjQ4NDggNDIuNDY3NSAzMS4xMTQ3QzQyLjc2MjEgMzAuNTc3NyA0Mi41NTg3IDI5LjkwNzggNDIuMDEzMyAyOS42MTcxQzQwLjI0NzMgMjguNjc4MyAzOC4zNjIxIDI4LjAwMjYgMzYuNDAyNiAyNy41OTg2TDM0Ljc0MDEgMjQuMTAzMUMzNS40ODY2IDIzLjM2OTMgMzUuOTQ5IDIyLjM1NTcgMzUuOTQ5IDIxLjIzNzNDMzUuOTQ5IDE5LjAwMyAzNC4xMDI5IDE3LjE4NTMgMzEuODMzNyAxNy4xODUzQzI5LjU2NDQgMTcuMTg1MyAyNy43MTgzIDE5LjAwMyAyNy43MTgzIDIxLjIzNzNDMjcuNzE4MyAyMi4zNTUxIDI4LjE4MDcgMjMuMzY5MyAyOC45MjcyIDI0LjEwMzFMMjcuMjY1OSAyNy41OTUxQzIxLjk5MjUgMjguNjgyNCAxNy4zNjM5IDMxLjczOTIgMTQuMzE5NSAzNi4xMTc2TDguODY2NjUgMzAuOTYzOUM5LjE1MDE2IDMwLjQxNDMgOS4zMTE1IDI5Ljc5MzIgOS4zMTE1IDI5LjEzNTNDOS4zMTE1IDI2LjkwMSA3LjQ2NTQ0IDI1LjA4MzMgNS4xOTYxNiAyNS4wODMzQzIuOTI2ODcgMjUuMDgzMyAxLjA4MDgxIDI2LjkwMSAxLjA4MDgxIDI5LjEzNTNDMS4wODA4MSAzMS4xOTAxIDIuNjQyMTkgMzIuODkxNSA0LjY1ODM1IDMzLjE1MTdMNi45MzkzMyA0OC4yODQxQzcuMDIyMzQgNDguODMyNiA3LjUwMTEgNDkuMjI2OSA4LjA0ODI1IDQ5LjIyNjlDOC4xMDMyIDQ5LjIyNjkgOC4xNTg3NCA0OS4yMjI4IDguMjE0ODUgNDkuMjE0OEM4LjgyNzQ4IDQ5LjEyNSA5LjI1MTI5IDQ4LjU2MjYgOS4xNjAxIDQ3Ljk1ODlMNi44Nzk3MSAzMi44MzE3QzcuMDQwNDYgMzIuNzYwMyA3LjE5NTk2IDMyLjY3OTcgNy4zNDUwMiAzMi41ODk0QzcuMzM1NjcgMzIuNTgxMyA3LjM1NDM3IDMyLjU5OCA3LjM0NTAyIDMyLjU4OTRMMjAuMDI4OSA0NC41Nzc0QzIwLjI0IDQ0Ljc3NjUgMjAuNTE4OCA0NC44ODQ3IDIwLjgwNjQgNDQuODg0N0MyMC44NzQyIDQ0Ljg4NDcgMjAuOTQzMiA0NC44NzkgMjEuMDExNiA0NC44NjYzQzIxLjM2NyA0NC44MDEzIDIxLjY2OTIgNDQuNTcxMSAyMS44MjI0IDQ0LjI0ODdMMzAuODkzMSAyNS4xODEyQzMxLjE5NTMgMjUuMjUxNCAzMS41MTA0IDI1LjI4OTQgMzEuODMzNyAyNS4yODk0QzMyLjE1NzUgMjUuMjg5NCAzMi40NzIgMjUuMjUxNCAzMi43NzQyIDI1LjE4MTJMNDEuODQ0OSA0NC4yNDg3QzQxLjk5ODcgNDQuNTcxMSA0Mi4zMDAzIDQ0LjgwMTMgNDIuNjU2MyA0NC44NjYzQzQyLjcyNDcgNDQuODc5IDQyLjc5MzEgNDQuODg0NyA0Mi44NjE1IDQ0Ljg4NDdDNDMuMTQ4NSA0NC44ODQ3IDQzLjQyNzkgNDQuNzc2NSA0My42MzkgNDQuNTc3NEw1Ni4zMjIzIDMyLjU4OTRDNTYuMzEzNSAzMi41OTggNTYuMzMxNyAzMi41ODEzIDU2LjMyMjMgMzIuNTg5NEM1Ni40NzE0IDMyLjY3OTcgNTYuNjI3NCAzMi43NjAzIDU2Ljc4ODIgMzIuODMxN0w1My4wODI2IDU3LjQxMDlINDguMDA3NEM0Ny40ODEzIDU0LjU3NTcgNDQuOTU2IDUyLjQxOTYgNDEuOTI3NCA1Mi40MTk2SDIxLjc0QzE4LjcxMzEgNTIuNDE5NiAxNi4xODk1IDU0LjU3MjggMTUuNjYxMSA1Ny40MTA5SDEwLjU4NTNMOS44NjUwOCA1Mi42MzcxQzkuNzc0NDggNTIuMDMzOSA5LjIwMjc3IDUxLjYxODQgOC41OTAxNSA1MS43MDY0QzcuOTc3NTIgNTEuNzk2MiA3LjU1MzcxIDUyLjM1ODUgNy42NDQ5IDUyLjk2MjNMOC4zMTU0IDU3LjQxMDlIMi4zODgyNkMxLjc2ODYyIDU3LjQxMDkgMS4yNjU4OSA1Ny45MDU5IDEuMjY1ODkgNTguNTE2QzEuMjY1ODkgNTkuMTI2NyAxLjc2ODYyIDU5LjYyMTEgMi4zODgyNiA1OS42MjExSDU3LjY1MDZaTTMuMzI1NTQgMjkuMTM1M0MzLjMyNTU0IDI4LjEyIDQuMTY0NCAyNy4yOTM1IDUuMTk2MTYgMjcuMjkzNUM2LjIyNzkxIDI3LjI5MzUgNy4wNjY3NyAyOC4xMiA3LjA2Njc3IDI5LjEzNTNDNy4wNjY3NyAzMC4xNTEyIDYuMjI3OTEgMzAuOTc3MiA1LjE5NjE2IDMwLjk3NzJDNC4xNjQ0IDMwLjk3NzIgMy4zMjU1NCAzMC4xNTEyIDMuMzI1NTQgMjkuMTM1M1pNMjAuNDUzOSA0MS45MTU0TDE1Ljk2MzMgMzcuNjcxMUMxOC4zNTM2IDM0LjA4NDEgMjEuOTE1OSAzMS40NDk3IDI2LjAzMDEgMzAuMTkyN0wyMC40NTM5IDQxLjkxNTRaTTI5Ljk2MyAyMS4yMzczQzI5Ljk2MyAyMC4yMjE0IDMwLjgwMTkgMTkuMzk1NSAzMS44MzM3IDE5LjM5NTVDMzIuODY1NCAxOS4zOTU1IDMzLjcwNDMgMjAuMjIxNCAzMy43MDQzIDIxLjIzNzNDMzMuNzA0MyAyMi4yNTMyIDMyLjg2NTQgMjMuMDc5MiAzMS44MzM3IDIzLjA3OTJDMzAuODAxOSAyMy4wNzkyIDI5Ljk2MyAyMi4yNTMyIDI5Ljk2MyAyMS4yMzczWk0xNy45NjI1IDU3LjQxMDlDMTguNDQzNiA1NS44MDUxIDE5Ljk1NTMgNTQuNjI5OCAyMS43NCA1NC42Mjk4SDQxLjkyNzRDNDMuNzEyIDU0LjYyOTggNDUuMjIzNyA1NS44MDUxIDQ1LjcwNDggNTcuNDEwOUgxNy45NjI1Wk01OC40NzEyIDI3LjI5MzVDNTkuNTAyOSAyNy4yOTM1IDYwLjM0MTggMjguMTIgNjAuMzQxOCAyOS4xMzUzQzYwLjM0MTggMzAuMTUxMiA1OS41MDI5IDMwLjk3NzIgNTguNDcxMiAzMC45NzcyQzU3LjQzOTQgMzAuOTc3MiA1Ni42MDA2IDMwLjE1MTIgNTYuNjAwNiAyOS4xMzUzQzU2LjYwMDYgMjguMTIgNTcuNDM5NCAyNy4yOTM1IDU4LjQ3MTIgMjcuMjkzNVoiIGZpbGw9IiMxNzFDMjYiLz4KPHBhdGggZD0iTTIyLjY5ODggOC41NzgwNEgyMy41OTY3VjkuNDYyMTJDMjMuNTk2NyAxMC4wNzI4IDI0LjA5OTQgMTAuNTY3MiAyNC43MTkgMTAuNTY3MkMyNS4zMzg3IDEwLjU2NzIgMjUuODQxNCAxMC4wNzI4IDI1Ljg0MTQgOS40NjIxMlY4LjU3ODA0SDI2LjczOTNDMjcuMzU4OSA4LjU3ODA0IDI3Ljg2MTcgOC4wODM2MiAyNy44NjE3IDcuNDcyOTRDMjcuODYxNyA2Ljg2MjI2IDI3LjM1ODkgNi4zNjc4NCAyNi43MzkzIDYuMzY3ODRIMjUuODQxNFY1LjQ4Mzc2QzI1Ljg0MTQgNC44NzMwOCAyNS4zMzg3IDQuMzc4NjYgMjQuNzE5IDQuMzc4NjZDMjQuMDk5NCA0LjM3ODY2IDIzLjU5NjcgNC44NzMwOCAyMy41OTY3IDUuNDgzNzZWNi4zNjc4NEgyMi42OTg4QzIyLjA3OTEgNi4zNjc4NCAyMS41NzY0IDYuODYyMjYgMjEuNTc2NCA3LjQ3Mjk0QzIxLjU3NjQgOC4wODM2MiAyMi4wNzkxIDguNTc4MDQgMjIuNjk4OCA4LjU3ODA0WiIgZmlsbD0iIzE3MUMyNiIvPgo8L3N2Zz4K"
+                      class="plan-icon"
+                    />
+                  </div>
+                  <p class="h5 my-3">Personal Pro</p>
+                  <p class="card-text">
+                    For individual freelancers, consultants to design database
+                    diagrams
+                  </p>
+                  <div class="horizontal-divider"></div>
+                  <p class="fs-1 fw-bold mt-4">$10</p>
+                  <h5>Anualmente</h5>
+                  <div class="text-start mt-4">
+                    <ul class="mt-2 ps-2">
+                      <li class="mb-2 me-4">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> Lorem ipsum dolor </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">tempora incidunt</span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          magnam aliquam voluptatem
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          voluptas nulla pariatur
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          nostrum exercitationem
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> corporis suscipit </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> commodi consequatur </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2">
+                          enim ipsam voluptatem
+                        </span>
+                      </li>
+                      <li class="mb-2">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="check"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          class="mr-2 svg-inline--fa fa-check fa-w-16"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                            class=""
+                          ></path>
+                        </svg>
+                        <span class="text-lg ms-2"> consequuntur </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-5">
+                  <a href="#" class="btn btn-primary"
+                    >Actualizar ahora
+                    <mat-icon
+                      aria-hidden="false"
+                      aria-label="Example home icon"
+                      fontIcon="workspace_premium"
+                    ></mat-icon
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold">Preguntas Frecuentes</h2>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How does dbdiagram's pricing work?</h3>
+              <p>
+                • The Personal plan is available forever. The Personal Pro plan
+                costs $14 per month and unlocks Pro features in your Personal
+                Workspace.
+              </p>
+              <p>
+                • The Team plan will bring your team together to collaborate on
+                a centralized Team Workspace.
+              </p>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How can I manage my subscriptions?</h3>
+              <p>
+                • The Personal Pro subscription can be found in your personal
+                workspace window's "Billing" section.
+              </p>
+              <p>
+                • The Team subscription can be found in the team workspace
+                window's "Billing" section.
+              </p>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How does dbdiagram's pricing work?</h3>
+              <p>
+                • The Personal plan is available forever. The Personal Pro plan
+                costs $14 per month and unlocks Pro features in your Personal
+                Workspace.
+              </p>
+              <p>
+                • The Team plan will bring your team together to collaborate on
+                a centralized Team Workspace.
+              </p>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How can I manage my subscriptions?</h3>
+              <p>
+                • The Personal Pro subscription can be found in your personal
+                workspace window's "Billing" section.
+              </p>
+              <p>
+                • The Team subscription can be found in the team workspace
+                window's "Billing" section.
+              </p>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How does dbdiagram's pricing work?</h3>
+              <p>
+                • The Personal plan is available forever. The Personal Pro plan
+                costs $14 per month and unlocks Pro features in your Personal
+                Workspace.
+              </p>
+              <p>
+                • The Team plan will bring your team together to collaborate on
+                a centralized Team Workspace.
+              </p>
+            </div>
+            <div class="col-6 mt-2">
+              <h3 class="fw-bold mb-0">How can I manage my subscriptions?</h3>
+              <p>
+                • The Personal Pro subscription can be found in your personal
+                workspace window's "Billing" section.
+              </p>
+              <p>
+                • The Team subscription can be found in the team workspace
+                window's "Billing" section.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

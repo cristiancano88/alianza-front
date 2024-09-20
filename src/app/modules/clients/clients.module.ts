@@ -9,6 +9,7 @@ import { ClientsTableComponent } from './clients-table/clients-table.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { SearchClientComponent } from './search-client/search-client.component';
 import { AdvanceSearchClientComponent } from './advance-search-client/advance-search-client.component';
+import { PaymenModalComponent } from './paymen-modal/paymen-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AdvanceSearchClientComponent } from './advance-search-client/advance-se
     SearchClientComponent,
     CreateClientComponent,
     AdvanceSearchClientComponent,
+    PaymenModalComponent,
   ],
   imports: [
     CommonModule,

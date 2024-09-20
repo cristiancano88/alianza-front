@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Create New Client</h1>
+<div mat-dialog-content>
+  <p>Se va a generar el pago de la membrecia</p>
+
+  <form #form id="paymentform" method="post" action="{{ payment?.payUrl }}">
+    <input name="merchantId" type="hidden" [ngModel]="payment?.merchantId" />
+    <input name="accountId" type="hidden" [ngModel]="payment?.accountId" />
+    <input name="description" type="hidden" [ngModel]="payment?.description" />
+    <input
+      name="referenceCode"
+      type="hidden"
+      [ngModel]="payment?.referenceCode"
+    />
+    <input name="amount" type="hidden" [ngModel]="payment?.amount" />
+    <input name="tax" type="hidden" [ngModel]="payment?.tax" />
+    <input
+      name="taxReturnBase"
+      type="hidden"
+      [ngModel]="payment?.taxReturnBase"
+    />
+    <input name="currency" type="hidden" [ngModel]="payment?.currency" />
+    <input name="signature" type="hidden" [ngModel]="payment?.signature" />
+    <input name="test" type="hidden" value="1" />
+
+    <input
+      name="buyerEmail"
+      type="hidden"
+      value="christian.cano@fouriering.com"
+    />
+    <!-- <input name="telephone" type="hidden" value="3016502188" /> -->
+    <!-- <input name="buyerFullName" type="hidden" value="Bill Gate" /> -->
+
+    <input
+      name="responseUrl"
+      type="hidden"
+      value="http://localhost:4200/clients"
+    />
+
+    <!-- <input name="payerEmail" type="hidden" value="cristiancano888@gmail.com" />
+    <input name="payerPhone" type="hidden" value="3015708261" />
+    <input name="payerFullName" type="hidden" value="Jhon Wick" />
+    <input name="payerDocument" type="hidden" value="1128467785" />
+    <input name="payerDocumentType" type="hidden" value="CC" /> -->
+    <input
+      name="confirmationUrl"
+      type="hidden"
+      value="http://localhost:8080/api/v1/payments/confirmation"
+    />
+    <!-- <input name="Submit" type="submit" value="Enviar" /> -->
+  </form>
+</div>
+<div mat-dialog-actions align="end" class="px-4">
+  <button
+    form="paymentform"
+    class="btn btn-primary px-5"
+    type="submit"
+    (click)="form.submit()"
+  >
+    Pagar
+  </button>
+</div>

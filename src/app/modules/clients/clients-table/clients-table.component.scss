@@ -1,3 +1,26 @@
 .mat-icon {
   height: 18px;
 }
+
+// .modal-body {
+//   padding-left: 180px;
+//   padding-right: 100px;
+// }
+
+.horizontal-divider {
+  border-bottom: 1px solid #dcdcdc;
+  width: 90%;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+
+  li {
+    margin-right: 10px;
+
+    svg {
+      width: 1em;
+    }
+  }
+}

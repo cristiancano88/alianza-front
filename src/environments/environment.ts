@@ -5,6 +5,12 @@
 export const environment = {
   production: false,
   clientsUrl: 'http://localhost:8080/api/v1',
+
+  payU: {
+    test: 1,
+    responseUrl: '/payResponses',
+    confirmationUrl: '/payConfirmations',
+  },
 };
 
 /*
