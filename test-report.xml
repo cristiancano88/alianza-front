@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testExecutions version="1">
-  <file path="C:\Users\ChristianCano\OneDrive - FOURIER ANALYTICS SAS\Documentos\Christian\alianza-project\alianza-front\src\app\shared\services\clients.service.spec.ts">
-    <testCase name="ClientsService should be created" duration="0"/>
-    <testCase name="ClientsService should get clients" duration="0"/>
-    <testCase name="ClientsService should create product" duration="0"/>
-    <testCase name="ClientsService should search clients by shared key" duration="40"/>
-  </file>
-</testExecutions>
